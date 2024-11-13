@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Text Layout</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left section: 3D object container and symbols container -->
+        <div class="left">
+            <div id="scene-container">
+                <img id="overlay-image" src="brain/face.png" alt="Overlay Image" style="display: none; position: absolute; width: 100px; height: 100px; transform: translate(-50%, -50%); z-index: 1;">
+            </div>
+            <div id="symbols-container"></div>
+        </div>
+        
+        <!-- Right section: Text input and user content -->
+        <div class="right">
+            <p class="username">@jiwoolee</p>
+            <h2>Write text<br>to start<br>class.</h2>
+            <textarea id="userInput" placeholder="TYPE HERE"></textarea>
+            <div id="face-overlay"></div>
+        </div>
+    </div>
+
+    <!-- Include Three.js and necessary scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="main.js"></script> <!-- Three.js and rotation control -->
+    <script src="script.js"></script> <!-- Typing and symbol generation -->
+</body>
+</html>

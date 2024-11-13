@@ -1,0 +1,154 @@
+/* General styling for body */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+.container {
+    display: flex;
+    width: 100%; /* Container width */
+    height: 100%; /* Container height */
+    max-width: Chrome 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Left section with flex layout */
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    background-color: #1E1E1E;
+    color: #b7b7b7;
+    width: 65%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 3D scene container */
+#scene-container {
+    width: 80%;
+    height: 300px;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Symbols container now positioned behind the 3D model */
+#symbols-container {
+    width: 80%;
+    height: auto;
+    margin-top: 1px;
+    padding: 10px;
+    text-align: start;
+    background-color: transparent;
+    color: #525252;
+    font-size: 72px;
+    white-space: pre-wrap;
+    line-height: 1.2;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 200;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
+}
+
+/* Right section with exact 50% width */
+.right {
+    background-color: #c8c8c8;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Styling for the text elements inside the right section */
+.username {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+}
+
+#text-display {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #acacac;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+}
+
+textarea {
+    width: 90%;
+    height: 80%;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #b7b7b7;
+    background-color: #b7b7b7;
+    color: #333;
+    resize: none;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 200;
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    .left, .right {
+        width: 100%;
+    }
+    #scene-container {
+        max-width: 100%;
+    }
+}
+
+#overlay-image {
+    display: none;
+    position: absolute;
+    top: 65%;
+    left: 53%;  /* Adjust this value to move right/left */
+    width: 130px;
+    height: 130px;
+    transform: translate(-50%, -50%);
+    z-index: 3;  /* Make sure it's above other elements */
+}
